@@ -17,8 +17,8 @@ justify-content: space-between;
 align-items: center;
 padding: 1em;
 background-color: rgb(219, 216, 211);
-/* font-size: clamp(.5rem, 2.5vmin, 1.5rem);
- */}
+font-size: clamp(.5rem, 2.5vmin, 1.5rem);
+}
 
 #teclado {
 display: grid;
