@@ -103,9 +103,9 @@ grid-column: span 3;
 
 #grid {
 display: grid;
-grid-template-rows: repeat(6, 4em);
-grid-template-columns: repeat(5, 4em);
-gap: 0.25em; 
+grid-template-rows: repeat(6, 1fr);
+grid-template-columns: repeat(5, 1fr);
+gap: 5px; 
 margin-bottom: 1em;
 margin-top: 25px;
 }
