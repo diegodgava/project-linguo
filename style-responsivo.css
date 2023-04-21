@@ -11,7 +11,7 @@
     display: none;
   }
   } 
-  @media screen and (max-width: 1000px) and (min-height: 1000px) {
+  @media screen and (max-width: 1000px) and (min-height: 700px) {
     .title-container {
         flex-grow: 1;
         display: flex;
