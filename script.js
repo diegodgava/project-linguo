@@ -259,3 +259,20 @@ clicarTeclas()
 pressTeclado()
 }
 
+const modalIcon = document.querySelector('.modal-icon');
+const modal = document.querySelector('.modal');
+const closeIcon = document.querySelector('.close-icon')
+
+modalIcon.addEventListener('click', () => {
+  modal.style.display = 'flex';
+});
+
+closeIcon.addEventListener('click', (event) => {
+      modal.style.display = 'none';
+});
+
+modal.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});

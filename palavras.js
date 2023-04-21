@@ -1,5 +1,6 @@
 const palavrasPossiveis = 
 [
+    "poste",
     "tecla",
     "abaco",
     "abada",
@@ -1445,6 +1446,7 @@ const palavrasPossiveis =
 
 const listaDePalavras =
 [
+    "poste",
     "Aaiún",
     "Aarão",
     "Ababa",

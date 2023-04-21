@@ -22,7 +22,7 @@ justify-content: center;
 align-items: center;
 }
   
- h1 {
+header h1 {
 margin-left: 3em;
 color: white;
 } 
@@ -54,7 +54,7 @@ flex-direction: column;
 justify-content: space-between;
 align-items: center;
 padding: 1em;
-background-color: rgb(219, 216, 211);
+background-color: rgb(255, 255, 255);
 font-size: clamp(1rem, 2.2vmin, 1.5rem);
 }
 
@@ -111,7 +111,6 @@ color: black;
 user-select: none;
 }
   
-  
 .alert-container {
 position: fixed;
 top: 10vh;
@@ -139,3 +138,113 @@ margin-bottom: 0;
 .alert.hide {
 opacity: 0;
 }
+
+
+.modal {
+display: none;
+position: fixed;
+width: 100%;
+height: 100%;
+top: 0;
+left: 0;
+background-color: rgba(0, 0, 0, 0.5);
+z-index: 999;
+display: flex;
+justify-content: center;
+align-items: center; 
+}
+  
+.modal-content {
+position: relative;
+border-radius: 8px;
+border: 1px solid black;
+background-color: white;
+color: black;
+box-shadow: 0 4px 23px 0 rgba(0,0,0,.2);
+width: 90%;
+max-height: 100%;
+max-width: 500px;
+padding: 2em;
+box-sizing: border-box;
+font-size: 0.7em;
+}
+  
+#modal-title {
+font-weight: 700;
+font-size: 2.5em;
+letter-spacing: 0;
+line-height: 1em;
+text-transform: none;
+text-align: left;
+margin-bottom: 7px;
+margin-top: 15px;
+}
+#title-icon {
+display: flex; 
+justify-content: space-between;
+}
+.close-icon {
+cursor: pointer;
+}
+
+
+#modal-sub{
+font-weight: 500;
+font-size: 1.5em;
+line-height: 1em;
+margin: 0;
+}
+
+#modal-instrucoes{
+padding: 10px;
+font-size: 1.2em;
+line-height: 1.5em;
+font-weight: 500;
+margin-bottom: 10px;
+padding-inline-start: 1em;
+}
+
+#modal-instrucoes li {
+margin-top: 0.9em;
+}
+
+#modal-exemplo-p {
+font-weight: bold;
+font-size: 1.3em;
+line-height: 20px;
+border-top: 1px solid grey;
+padding: 5px;
+}
+
+#img-container {
+display: flex;
+flex-direction: column;
+}
+div img {
+width: 250px;
+line-height: 1;
+box-sizing: border-box;
+margin: 1em;
+}
+
+#img-container p {
+font-size: 1.3em;
+line-height: 1em;
+margin-bottom: 1em;
+}
+
+#modal-footer{
+position: relative;
+font-size: 1.2em;
+line-height: 20px;
+display: flex;
+width: 100%;
+align-items: center;
+justify-content: flex-start;
+text-decoration: none;
+padding: 7px;
+border-top: 1px solid grey;
+margin: 0 auto 20px;
+margin-bottom: 0;
+}
+
