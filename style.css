@@ -6,7 +6,7 @@
 box-sizing: border-box;
 margin: 0;
 padding: 0;
-font-family: Arial, Helvetica, sans-serif;
+font-family: Georgia, sans-serif;
 }
 header {
 display: flex;
@@ -22,9 +22,10 @@ justify-content: center;
 align-items: center;
 }
   
-h1 {
-margin: 0;
-}
+ h1 {
+margin-left: 3em;
+color: white;
+} 
   
 nav ul {
 list-style-type: none;
@@ -54,7 +55,7 @@ justify-content: space-between;
 align-items: center;
 padding: 1em;
 background-color: rgb(219, 216, 211);
-font-size: clamp(1rem, 2.5vmin, 1.5rem);
+font-size: clamp(1rem, 2.2vmin, 1.5rem);
 }
 
 #teclado {
@@ -90,12 +91,12 @@ grid-column: span 3;
 }
 
 #grid {
-    display: grid;
-    grid-template-rows: repeat(6, 4em);
-    grid-template-columns: repeat(5, 4em);
-    gap: 0.25em; 
-    margin-bottom: 1em;
-  }
+display: grid;
+grid-template-rows: repeat(6, 4em);
+grid-template-columns: repeat(5, 4em);
+gap: 0.25em; 
+margin-bottom: 1em;
+}
   
 .tile {
 border: .05em solid hsl(240, 2%, 23%);

@@ -1,5 +1,10 @@
-/* @media screen and (max-width: 500px) {
-    #container-jogo {
-    font-size: clamp(1rem, 2.5vmin, 2rem);
-    }
-} */
+ @media screen and (max-width: 695px) {
+  .title-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: left;
+  }
+  h1 {
+    margin-left: 0;
+  }
+  } 
