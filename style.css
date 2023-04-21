@@ -248,3 +248,9 @@ margin: 0 auto 20px;
 margin-bottom: 0;
 }
 
+.animate__animated.animate__fadeInUp {
+    --animate-duration: 0.5s;
+  }
+  .animate__animated.animate__fadeOutDown {
+    --animate-duration: 0.5s;
+  }

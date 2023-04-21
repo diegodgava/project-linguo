@@ -262,17 +262,16 @@ pressTeclado()
 const modalIcon = document.querySelector('.modal-icon');
 const modal = document.querySelector('.modal');
 const closeIcon = document.querySelector('.close-icon')
+const modalContent = document.querySelector('.modal-content')
 
 modalIcon.addEventListener('click', () => {
   modal.style.display = 'flex';
 });
 
-closeIcon.addEventListener('click', (event) => {
-      modal.style.display = 'none';
-});
-
 modal.addEventListener('click', (event) => {
-  if (event.target === modal) {
+    modalContent.classList.add('animate__fadeOutDown');
+    setTimeout(function() {
+    modalContent.classList.remove('animate__fadeOutDown');
     modal.style.display = 'none';
-  }
+    }, 100);
 });
