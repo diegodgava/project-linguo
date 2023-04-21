@@ -20,18 +20,26 @@ flex-grow: 1;
 display: flex;
 justify-content: center;
 align-items: center;
+flex-wrap: nowrap;
 }
   
 header h1 {
-margin-left: 3em;
 color: white;
+font-family: 'DM Serif Display', serif;
+width: 120px;
+padding: 10px;
+
 } 
-  
+#ghost-div {
+width: 120px;
+}
+
 nav ul {
 list-style-type: none;
 padding: 0;
 margin: 0;
 display: flex;
+width: 120px;
 }
   
 nav li {
@@ -63,9 +71,11 @@ display: grid;
 grid-template-columns: repeat(21, minmax(auto, 1.25em));
 grid-auto-rows: 3em;
 gap: .25em;
-justify-content: center;
-margin-left: 1.5em;
+margin-left: 20px;
+margin-bottom: 8px;
 }
+
+
   
 #teclado button {
 font-size: inherit;
@@ -88,6 +98,7 @@ filter: brightness(calc(100% - var(--lightness-offset)));
 #teclado button:nth-child(21),
 #teclado  button:nth-child(29) {
 grid-column: span 3;
+
 }
 
 #grid {
@@ -96,7 +107,9 @@ grid-template-rows: repeat(6, 4em);
 grid-template-columns: repeat(5, 4em);
 gap: 0.25em; 
 margin-bottom: 1em;
+margin-top: 25px;
 }
+
   
 .tile {
 border: .05em solid hsl(240, 2%, 23%);
@@ -178,10 +191,12 @@ text-transform: none;
 text-align: left;
 margin-bottom: 7px;
 margin-top: 15px;
+font-family: 'DM Serif Display', serif;
 }
 #title-icon {
 display: flex; 
 justify-content: space-between;
+
 }
 .close-icon {
 cursor: pointer;
@@ -189,10 +204,11 @@ cursor: pointer;
 
 
 #modal-sub{
-font-weight: 500;
+font-weight: 10;
 font-size: 1.5em;
 line-height: 1em;
 margin: 0;
+font-family: 'DM Serif Display', serif;
 }
 
 #modal-instrucoes{
