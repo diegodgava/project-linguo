@@ -8,6 +8,7 @@ margin: 0;
 padding: 0;
 font-family: Georgia, sans-serif;
 }
+
 header {
 display: flex;
 background-color: #222;
@@ -30,16 +31,19 @@ width: 120px;
 padding: 10px;
 
 } 
+
 #ghost-div {
 width: 120px;
 }
 
+nav {
+display: flex;
+align-items: center;
+width: 120px;
+}
 nav ul {
 list-style-type: none;
-padding: 0;
-margin: 0;
 display: flex;
-width: 120px;
 }
   
 nav li {
@@ -75,8 +79,7 @@ margin-left: 20px;
 margin-bottom: 8px;
 }
 
-
-  
+ 
 #teclado button {
 font-size: inherit;
 grid-column: span 2;
@@ -98,7 +101,6 @@ filter: brightness(calc(100% - var(--lightness-offset)));
 #teclado button:nth-child(21),
 #teclado  button:nth-child(29) {
 grid-column: span 3;
-
 }
 
 #grid {
@@ -110,7 +112,6 @@ margin-bottom: 1em;
 margin-top: 25px;
 }
 
-  
 .tile {
 border: .05em solid hsl(240, 2%, 23%);
 width: 2em;
@@ -152,56 +153,47 @@ margin-bottom: 0;
 opacity: 0;
 }
 
-
 .modal {
-display: none;
-position: fixed;
-width: 100%;
-height: 100%;
-top: 0;
-left: 0;
-background-color: rgba(0, 0, 0, 0.5);
-z-index: 999;
 display: flex;
-justify-content: center;
-align-items: center; 
-}
-  
-.modal-content {
-position: relative;
+position: fixed;
+z-index: 999;
+flex-direction: column;
 border-radius: 8px;
 border: 1px solid black;
 background-color: white;
 color: black;
 box-shadow: 0 4px 23px 0 rgba(0,0,0,.2);
 width: 90%;
-max-height: 100%;
+max-height: 70%;
 max-width: 500px;
 padding: 2em;
-box-sizing: border-box;
 font-size: 0.7em;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
 }
-  
+
 #modal-title {
 font-weight: 700;
 font-size: 2.5em;
-letter-spacing: 0;
 line-height: 1em;
 text-transform: none;
 text-align: left;
 margin-bottom: 7px;
 margin-top: 15px;
 font-family: 'DM Serif Display', serif;
+
 }
+
 #title-icon {
 display: flex; 
 justify-content: space-between;
 
 }
+
 .close-icon {
 cursor: pointer;
 }
-
 
 #modal-sub{
 font-weight: 10;
@@ -236,6 +228,7 @@ padding: 5px;
 display: flex;
 flex-direction: column;
 }
+
 div img {
 width: 250px;
 line-height: 1;
@@ -264,9 +257,71 @@ margin: 0 auto 20px;
 margin-bottom: 0;
 }
 
-.animate__animated.animate__fadeInUp {
-    --animate-duration: 0.5s;
-  }
+.animate__animated.animate__fadeIn {
+    --animate-duration: 0.3s;
+}
+
   .animate__animated.animate__fadeOutDown {
-    --animate-duration: 0.5s;
-  }
+    --animate-duration: 0.3s;
+}
+
+#modal-estatistica {
+display: none;
+position: fixed;
+z-index: 999;
+justify-content: center;
+align-items: center; 
+flex-direction: column;
+border-radius: 8px;
+border: 1px solid black;
+background-color: white;
+color: black;
+box-shadow: 0 4px 23px 0 rgba(0,0,0,.2);
+max-height: 30%;
+max-width: 450px;
+padding: 2em;
+font-size: 0.7em;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+} 
+
+#estatistica-titulo {
+font-weight: 300;
+font-size: 1em;
+line-height: 1em;
+text-transform: none;
+margin-bottom: 7px;
+font-family: 'DM Serif Display', serif;
+display: flex; 
+justify-content: center;
+margin-bottom: 30px;
+}
+
+#dados-estatisticas {
+display: flex;
+justify-content: space-between;
+font-size: 1.2em;
+}
+
+.estatistica-container {
+display: flex;
+flex-direction: column;
+text-align: center;
+width: 150px;
+line-height: 1.5em;
+}
+
+#n-jogados, #win-streak, #maior-win-streak {
+    font-size: 2em;
+    margin-bottom: 12px;
+}
+
+#modal-container{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 1500;
+    width: 100%;
+    height: 100%;
+}

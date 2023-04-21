@@ -22,36 +22,56 @@
         <div class="title-container">
             <h1>LINGUO</h1>
         </div>
-          <nav>
+        <nav>
             <ul>
                 <li><a href="#"><span class="material-icons modal-icon"> help_outline</span></a></li>
-                <li><a href="#"><span class="material-icons">leaderboard</span></a></li>
-                 <li><a href="#"><span class="material-icons">settings</span></a></li>
+                <li><a href="#"><span class="material-icons modal-icon-estatis">leaderboard</span></a></li>
+                <li><a href="#"><span class="material-icons">settings</span></a></li>
             </ul>
           </nav>
     </header>
-    <div class="modal">
-      <div class="modal-content animate__animated animate__fadeInUp">
+    <div id="modal-container">
+     <div class="modal animate__animated animate__fadeIn">
         <div id="title-icon">
-       <h1 id="modal-title">Como Jogar</h1>
-       <i class="material-icons close-icon">close</i>
+            <h1 id="modal-title">Como Jogar</h1>
+            <i class="material-icons close-icon">close</i>
         </div>
-       <h2 id="modal-sub">Descubra qual é a palavra em até 6 tentativas.</h2>
-       <ul id="modal-instrucoes">
-        <li>Cada palpite precisa ser uma palavra de 5 letras existente.</li>
-        <li>A cor das letras no grid e no teclado mudarão de cor conforme a proximidade do seu palpite.</li>
-       </ul>
-       <p id="modal-exemplo-p">Exemplo:</p>
-       <div id="img-container">
-        <img src="ex1.png" alt="">
-        <p><strong>T</strong> existe na palavra e está no local certo.</p>
-        <img src="ex2.png" alt="">
-        <p><strong>E</strong> existe na palavra, mas está no local errado.</p>
-        <img src="ex3.png" alt="">
-        <p><strong>G</strong> e<strong> I</strong> não existem em qualquer lugar da palavra!</p>
-       </div>
-       <div id="modal-footer">
+        <h2 id="modal-sub">Descubra qual é a palavra em até 6 tentativas.</h2>
+        <ul id="modal-instrucoes">
+            <li>Cada palpite precisa ser uma palavra de 5 letras existente.</li>
+            <li>A cor das letras no grid e no teclado mudarão de cor conforme a proximidade do seu palpite.</li>
+        </ul>
+        <p id="modal-exemplo-p">Exemplo:</p>
+        <div id="img-container">
+            <img src="ex1.png" alt="">
+            <p><strong>T</strong> existe na palavra e está no local certo.</p>
+            <img src="ex2.png" alt="">
+            <p><strong>E</strong> existe na palavra, mas está no local errado.</p>
+            <img src="ex3.png" alt="">
+            <p><strong>G</strong> e<strong> I</strong> não existem em qualquer lugar da palavra!</p>
+        </div>
+        <div id="modal-footer">
             <p>Uma expansão do jogo Wordle!</p>
+        </div>
+    </div> 
+
+    <div id="modal-estatistica" class="animate__animated animate__fadeIn">
+      <div id="estatistica-titulo">
+        <h3>ESTATÍSTICAS</h3>
+        </div>
+        <div id="dados-estatisticas">
+        <div class="estatistica-container">
+            <div id="n-jogados">0</div>
+            <div>Partidas Jogadas</div>
+        </div>
+        <div class="estatistica-container">
+            <div id="win-streak">0</div>
+            <div>Sequência de Vitórias</div>
+        </div>
+        <div class="estatistica-container">
+            <div id="maior-win-streak">0</div>
+            <div>Maior Sequência de Vitórias</div>
+        </div>
         </div>
       </div>
     </div>

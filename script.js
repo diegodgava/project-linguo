@@ -104,11 +104,17 @@ const submit = () => {
     if (palavraAtual === palavraSorteada) {
         mostrarMensagem("Parabéns! Você venceu.", 5000)
         animarVitoria()
+        partidasJogadas()
+        winStreak()
+        maiorStreak()
+        espacoVago = 0;
+        palpites = 0
     }
     if (palpites.length === 7) {
         mostrarMensagem(`Acabaram as chances! A palavra é: ${palavraSorteada}`, 5000)
         animarDerrota()
-
+        partidasJogadas()
+        quebrarStreak()
     } 
 }
 
@@ -252,26 +258,108 @@ teclas.forEach(function(tecla) {
     })
 }
 
-window.onload =() => {
+const mostrarInstrucao = () => {
+    const modalIcon = document.querySelector('.modal-icon')
+    const modalInstrucao = document.querySelector('.modal');
+    const modalCont = document.querySelector('#modal-container')
+    
+    modalIcon.addEventListener('click', () => {
+        modalInstrucao.style.display = 'flex';
+        modalCont.style.display = 'flex';
+    }); 
+    modalInstrucao.addEventListener('click', () => {
+    modalInstrucao.classList.add('animate__fadeOutDown');
+        setTimeout(function() {
+        modalInstrucao.classList.remove('animate__fadeOutDown');
+        modalCont.style.display = 'none';
+        modalInstrucao.style.display = 'none';
+        }, 100);
+    });
+}
+
+const mostrarEstatistica = () => {
+const iconEstatistica = document.querySelector('.modal-icon-estatis')
+const modalEstatistica = document.querySelector('#modal-estatistica')
+const modalCont = document.querySelector('#modal-container')
+
+        
+iconEstatistica.addEventListener('click', () => {
+    modalEstatistica.style.display = 'flex';
+    modalCont.style.display = 'flex';
+
+});
+        
+modalEstatistica.addEventListener('click', () => {
+modalEstatistica.classList.add('animate__fadeOutDown');
+    setTimeout(function() {
+        modalEstatistica.classList.remove('animate__fadeOutDown');
+        modalEstatistica.style.display = 'none';
+        modalCont.style.display = 'none';
+
+        }, 100);
+    }); 
+}
+
+window.onload = () => {
 criarGrid()
 gerarTeclado()
 clicarTeclas()
 pressTeclado()
+mostrarInstrucao()
+mostrarEstatistica()
+estatisticaAtual() 
 }
 
-const modalIcon = document.querySelector('.modal-icon');
-const modal = document.querySelector('.modal');
-const closeIcon = document.querySelector('.close-icon')
-const modalContent = document.querySelector('.modal-content')
+const partidasJogadas = () => {
+const totalDePartidas = localStorage.getItem('totalDePartidas') || 0
+localStorage.setItem('totalDePartidas', Number(totalDePartidas) + 1)
+}
 
-modalIcon.addEventListener('click', () => {
-  modal.style.display = 'flex';
-});
+const winStreak = () => {
+    const winStreak = localStorage.getItem('winStreak') || 0
+    localStorage.setItem('winStreak', Number(winStreak) + 1)
+}
 
-modal.addEventListener('click', (event) => {
-    modalContent.classList.add('animate__fadeOutDown');
-    setTimeout(function() {
-    modalContent.classList.remove('animate__fadeOutDown');
-    modal.style.display = 'none';
-    }, 100);
-});
+const quebrarStreak = () => {
+    localStorage.setItem('winStreak', 0)
+}
+
+const maiorStreak = () => {
+    const winStreak = localStorage.getItem('winStreak')
+    let maiorStreak = localStorage.getItem('streakCheck') || 0
+
+    if (winStreak > maiorStreak) {
+        localStorage.setItem('maiorStreak', winStreak)
+    }
+
+}
+
+
+ const estatisticaAtual = () => {
+    const total = document.getElementById('n-jogados')
+    const streak = document.getElementById('win-streak')
+    const maiorStreak = document.getElementById('maior-win-streak')
+
+    let maiorStreakStorage = localStorage.getItem('maiorStreak')
+    let totalStorage = localStorage.getItem('totalDePartidas')
+
+    const streakAtual = localStorage.getItem('winStreak')
+
+    total.innerHTML = totalStorage
+    streak.innerHTML = streakAtual
+    maiorStreak.innerHTML = maiorStreakStorage
+
+} 
+
+
+
+
+
+ 
+
+
+
+
+
+
+
