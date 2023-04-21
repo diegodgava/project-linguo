@@ -107,6 +107,8 @@ const submit = () => {
     }
     if (palpites.length === 7) {
         mostrarMensagem(`Acabaram as chances! A palavra é: ${palavraSorteada}`, 5000)
+        animarDerrota()
+
     } 
 }
 
@@ -232,6 +234,12 @@ const animarVitoria =  () => {
     grid.classList.add('animate__tada')
     }, 500)
 }
+const animarDerrota =  () => {
+    const grid = document.getElementById('grid')
+    setTimeout(() => {
+    grid.classList.add('animate__fadeOut')
+    }, 500)
+}
 
 const atualizarCoresTeclas = (arrPalavraAtual) => {
 const teclas = document.querySelectorAll('[data-key]');
@@ -250,3 +258,4 @@ gerarTeclado()
 clicarTeclas()
 pressTeclado()
 }
+
