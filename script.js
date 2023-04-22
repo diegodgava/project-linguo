@@ -37,14 +37,15 @@ const teclas = [
     '«',
 ]
 
-const criarGrid = () => {
+const criarGrid = (l, c, elementoPai) => {
 const grid = document.getElementById('grid');
-for (let i = 0; i < 5 * 6; i += 1) {
+
+for (let i = 0; i < l * c; i += 1) {
     const tile = document.createElement('div');
     tile.setAttribute('id', `${i +1}`)
     tile.classList.add('tile')
     tile.classList.add('animate__animated')
-    grid.appendChild(tile);
+    elementoPai.appendChild(tile);
   }
 }
 
@@ -87,6 +88,7 @@ const palavraExiste = (palavra) => {
 const submit = () => {
     const arrPalavraAtual = palpiteAtual()
     const palavraAtual = arrPalavraAtual.join('')
+
 
     if (palavraExiste(palavraAtual) && arrPalavraAtual.length === 5){
         animarFlip(arrPalavraAtual)
@@ -282,6 +284,7 @@ const iconEstatistica = document.querySelector('.modal-icon-estatis')
 const modalEstatistica = document.querySelector('#modal-estatistica')
 const modalCont = document.querySelector('#modal-container')
 
+
         
 iconEstatistica.addEventListener('click', () => {
     modalEstatistica.style.display = 'flex';
@@ -300,15 +303,28 @@ modalEstatistica.classList.add('animate__fadeOutDown');
     }); 
 }
 
-window.onload = () => {
-criarGrid()
-gerarTeclado()
-clicarTeclas()
-pressTeclado()
-mostrarInstrucao()
-mostrarEstatistica()
-estatisticaAtual() 
-}
+const mostrarOpcoes = () => {
+const btnOpcoes = document.querySelector('.modal-icon-opcao') 
+const modalCont = document.querySelector('#modal-container')
+const modalOpcoes = document.getElementById('menu-opcoes') 
+const closeIcon = document.querySelector('.opcao-close-icon') 
+
+btnOpcoes.addEventListener('click', () => {
+    modalOpcoes.style.display = 'flex';
+    modalCont.style.display = 'flex';
+
+});
+
+closeIcon.addEventListener('click', () => {
+    modalOpcoes.classList.add('animate__fadeOutDown');
+        setTimeout(function() {
+            modalOpcoes.classList.remove('animate__fadeOutDown');
+            modalOpcoes.style.display = 'none';
+            modalCont.style.display = 'none';
+    
+         }, 100);
+    }); 
+ }
 
 const partidasJogadas = () => {
 const totalDePartidas = localStorage.getItem('totalDePartidas') || 0
@@ -325,41 +341,118 @@ const quebrarStreak = () => {
 }
 
 const maiorStreak = () => {
-    const winStreak = localStorage.getItem('winStreak')
-    let maiorStreak = localStorage.getItem('streakCheck') || 0
+const winStreak = localStorage.getItem('winStreak')
+let maiorStreak = localStorage.getItem('streakCheck') || 0
 
     if (winStreak > maiorStreak) {
         localStorage.setItem('maiorStreak', winStreak)
     }
-
 }
 
-
- const estatisticaAtual = () => {
+const estatisticaAtual = () => {
     const total = document.getElementById('n-jogados')
     const streak = document.getElementById('win-streak')
     const maiorStreak = document.getElementById('maior-win-streak')
 
     let maiorStreakStorage = localStorage.getItem('maiorStreak')
     let totalStorage = localStorage.getItem('totalDePartidas')
-
     const streakAtual = localStorage.getItem('winStreak')
 
-    total.innerHTML = totalStorage
-    streak.innerHTML = streakAtual
-    maiorStreak.innerHTML = maiorStreakStorage
-
+    total.innerHTML = !totalStorage ? 0 : totalStorage;
+    streak.innerHTML = !streakAtual ? 0 : streakAtual
+    maiorStreak.innerHTML = !maiorStreakStorage ? 0 : maiorStreakStorage
 } 
 
+const escuro = () => {
+    const containerJogo = document.getElementById('container-jogo')
+    const grid = document.getElementById('grid')
+    const modalInstrucao = document.querySelector('.modal')
+    const modalEstatistica = document.getElementById('modal-estatistica')
+    const modalOpcoes = document.getElementById('menu-opcoes')  
+    const ex1 = document.getElementById('ex-1')
+    const ex2 = document.getElementById('ex-2')
+    const ex3 = document.getElementById('ex-3')
+    const exemploP = document.getElementById('exemplo-p')
+    
+    containerJogo.style.backgroundColor = '#141414'; 
+    grid.style.color = 'white'; 
+    modalInstrucao.style.backgroundColor = '#141414'
+    modalInstrucao.style.color = 'white'
+    modalEstatistica.style.backgroundColor = '#141414'
+    modalEstatistica.style.color = 'white'
+    modalOpcoes.style.backgroundColor = '#141414'
+    modalOpcoes.style.color = 'white'
+    ex1.src = './imagens/ex1-dark.png'
+    ex2.src = './imagens/ex2-dark.png'
+    ex3.src = './imagens/ex3-dark.png'
+    exemploP.innerHTML = '<strong>Nenhuma</strong> das letras existem na palavra!'
+}
+    
+const claro = () => {
+const containerJogo = document.getElementById('container-jogo')
+const grid = document.getElementById('grid')
+const modalInstrucao = document.querySelector('.modal')
+const modalEstatistica = document.getElementById('modal-estatistica')
+const ex1 = document.getElementById('ex-1')
+const ex2 = document.getElementById('ex-2')
+const ex3 = document.getElementById('ex-3')
+const exemploP = document.getElementById('exemplo-p')
+const modalOpcoes = document.getElementById('menu-opcoes')  
+  
+containerJogo.style.backgroundColor = ''; 
+grid.style.color = ''; 
+modalInstrucao.style.backgroundColor = ''
+modalInstrucao.style.color = ''
+modalEstatistica.style.backgroundColor = ''
+modalEstatistica.style.color = ''
+modalOpcoes.style.backgroundColor = ''
+    modalOpcoes.style.color = ''
+ex1.src = './imagens/ex1.png'
+ex2.src = './imagens/ex2.png'
+ex3.src = './imagens/ex3.png'
+exemploP.innerHTML = '<strong>G</strong> e<strong> I</strong> não existem em qualquer lugar da palavra!'
+    
+}
 
+const modoEscuro = () => {
+const darkModeBtn = document.getElementById('darkmode')
 
+const salvarModo = (ativo, estadoBtn) => {
+localStorage.setItem('darkMode', ativo);
+}
 
+darkModeBtn.addEventListener('change', () => {
+  if (darkModeBtn.checked) {
+    escuro()
+    salvarModo(true)
+    } else {
+    claro()
+    salvarModo(false)
+    }
+});
+}
 
- 
+const recuperarModo = () => {
+const darkModeBtn = document.getElementById('darkmode')
+    if (JSON.parse(localStorage.getItem('darkMode')) === true) {
+        escuro()
+        darkModeBtn.checked = true
+    } else {
+        claro()
+        darkModeBtn.checked = false
+    }
+}
 
-
-
-
-
-
+window.onload = () => {
+criarGrid(5, 6, grid)
+gerarTeclado()
+clicarTeclas()
+pressTeclado()
+mostrarInstrucao()
+mostrarEstatistica()
+mostrarOpcoes()
+estatisticaAtual() 
+modoEscuro()
+recuperarModo()
+}
 

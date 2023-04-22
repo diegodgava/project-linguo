@@ -17,7 +17,7 @@
       </style>
 </head>
 <body>
-    <header>
+    <header id="header-container">
         <div id="ghost-div"></div>
         <div class="title-container">
             <h1>LINGUO</h1>
@@ -26,7 +26,7 @@
             <ul>
                 <li><a href="#"><span class="material-icons modal-icon"> help_outline</span></a></li>
                 <li><a href="#"><span class="material-icons modal-icon-estatis">leaderboard</span></a></li>
-                <li><a href="#"><span class="material-icons">settings</span></a></li>
+                <li><a href="#"><span class="material-icons modal-icon-opcao">settings</span></a></li>
             </ul>
           </nav>
     </header>
@@ -43,12 +43,12 @@
         </ul>
         <p id="modal-exemplo-p">Exemplo:</p>
         <div id="img-container">
-            <img src="ex1.png" alt="">
+            <img id="ex-1" src="./imagens/ex1.png" alt="">
             <p><strong>T</strong> existe na palavra e está no local certo.</p>
-            <img src="ex2.png" alt="">
+            <img id='ex-2' src="./imagens/ex2.png" alt="">
             <p><strong>E</strong> existe na palavra, mas está no local errado.</p>
-            <img src="ex3.png" alt="">
-            <p><strong>G</strong> e<strong> I</strong> não existem em qualquer lugar da palavra!</p>
+            <img id="ex-3" src="./imagens/ex3.png" alt="">
+            <p id="exemplo-p"><strong>G</strong> e<strong> I</strong> não existem em qualquer lugar da palavra!</p>
         </div>
         <div id="modal-footer">
             <p>Uma expansão do jogo Wordle!</p>
@@ -74,10 +74,27 @@
         </div>
         </div>
       </div>
+      <div id="menu-opcoes" class="animate__animated animate__fadeIn">
+        <div id="opcoes-titulo">
+        <h3>OPÇÕES</h3>
+        <i class="material-icons opcao-close-icon">close</i>
+        </div>
+        <div id="btn-container-opcoes">
+            <div><p>Tema Escuro<p></div>
+            <div>
+            <label class="switch">
+                <input type="checkbox" id="darkmode">
+                <span class="slider"></span>
+            </label>
+            </div>
+        </div>
+        <div id="contato"><p>Email</p></div>
+      </div>
     </div>
     <div id="container-jogo">
         <div class="alert-container" data-alert-container></div>
         <div id="grid" class="animate__animated"></div>
+      
         <div data-keyboard id="teclado"></div>
     </div>
     </section>
