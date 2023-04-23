@@ -26,7 +26,7 @@ const teclas = [
     'K',
     'L',
     'Ç',
-    'ENTER',
+    '«',
     'Z',
     'X',
     'C',
@@ -34,7 +34,7 @@ const teclas = [
     'B',
     'N',
     'M',
-    '«',
+    'ENTER',
 ]
 
 const criarGrid = (l, c, elementoPai) => {
