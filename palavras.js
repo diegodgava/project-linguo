@@ -5817,6 +5817,7 @@ const listaDePalavras =
     "dídio",
     "didis",
     "dieco",
+    "BAILA",
     "Diego",
     "dieno",
     "diese",

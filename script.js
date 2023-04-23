@@ -1,9 +1,11 @@
 
-let palavraSorteada = palavrasPossiveis[Math.floor(Math.random() * palavrasPossiveis.length)].toUpperCase()
+let palavraSorteada = "XAILE"
+palavrasPossiveis[Math.floor(Math.random() * palavrasPossiveis.length)].toUpperCase()
 const dicionario = listaDePalavras.map(palavra => palavra.toUpperCase());
 let palpites = [[]]
 let contadorPalpite = 0
 let espacoVago = 1;
+let letrasPintadasDeVerde = '' 
 
 const teclas = [
     'Q',
@@ -149,19 +151,29 @@ const animarFlip = (arrPalavraAtual) => {
     contadorPalpite += 1;
 }
 
-const corDaTile = (letra, index)  => {
-    const letraCorreta = palavraSorteada.includes(letra) 
-    const posicaoAtualLetra = palavraSorteada.charAt(index)
-    const letraPosicaoCorreta = letra === posicaoAtualLetra
+
+const corDaTile = (letra, index) => {
+    const letraCorreta = palavraSorteada.includes(letra); 
+    const posicaoAtualLetra = palavraSorteada.charAt(index);
+    const letraPosicaoCorreta = letra === posicaoAtualLetra;
+    const letraNaPalavra = letraCorreta && !letraPosicaoCorreta;
+    
+    const letraPintadaDeVerde = letrasPintadasDeVerde.includes(letra); 
 
     if (!letraCorreta) {
-        return 'rgb(58, 58, 60)'
+        return 'rgb(58, 58, 60)'; // preto
+    } else if (letraPosicaoCorreta) {
+        letrasPintadasDeVerde += letra; 
+        return 'rgb(83,141,78)'; // verde
+    } else if (letraPintadaDeVerde) {
+        return 'rgb(58, 58, 60)'; // preto 
+    } else if (letraNaPalavra) {
+        return 'rgb(181,159,59)'; // amarelo
     }
-     if (letraPosicaoCorreta) {
-        return 'rgb(83,141,78)'
-     }
-     return 'rgb(181,159,59)'
 }
+
+ 
+
 
 const clicarTeclas = () => { 
 const botaoTecla = document.querySelector("[data-keyboard]")
