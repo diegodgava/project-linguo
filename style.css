@@ -313,13 +313,13 @@ font-size: 1.2em;
 display: flex;
 flex-direction: column;
 text-align: center;
-width: 150px;
+width: 100px;
 line-height: 1.5em;
 }
 
-#n-jogados, #win-streak, #maior-win-streak {
-    font-size: 2em;
-    margin-bottom: 12px;
+#n-jogados, #win-streak, #maior-win-streak, #qtd-vitorias {
+font-size: 2em;
+margin-bottom: 12px;
 }
 
 #modal-container{
@@ -441,7 +441,12 @@ border-bottom: 1px solid grey;
 margin-bottom: 15px;
 }
 
-#contato p {
+#contato p , a {
 font-size: 16px;
+text-decoration: none;
 }
 
+#footer {
+    display: flex;
+    justify-content: space-between;
+}

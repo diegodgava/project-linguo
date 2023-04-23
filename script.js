@@ -109,6 +109,7 @@ const submit = () => {
         partidasJogadas()
         winStreak()
         maiorStreak()
+        dadosVitoria()
         espacoVago = 0;
         palpites = 0
     }
@@ -339,6 +340,10 @@ const winStreak = () => {
 const quebrarStreak = () => {
     localStorage.setItem('winStreak', 0)
 }
+const dadosVitoria = () => {
+    const vitorias = localStorage.getItem('vitorias') || 0
+    localStorage.setItem('vitorias', Number(vitorias) + 1)
+}
 
 const maiorStreak = () => {
 const winStreak = localStorage.getItem('winStreak')
@@ -373,6 +378,8 @@ const escuro = () => {
     const ex2 = document.getElementById('ex-2')
     const ex3 = document.getElementById('ex-3')
     const exemploP = document.getElementById('exemplo-p')
+    const email = document.getElementById('mail')
+
     
     containerJogo.style.backgroundColor = '#141414'; 
     grid.style.color = 'white'; 
@@ -386,6 +393,8 @@ const escuro = () => {
     ex2.src = './imagens/ex2-dark.png'
     ex3.src = './imagens/ex3-dark.png'
     exemploP.innerHTML = '<strong>Nenhuma</strong> das letras existem na palavra!'
+    email.style.color = 'white'
+
 }
     
 const claro = () => {
@@ -397,7 +406,9 @@ const ex1 = document.getElementById('ex-1')
 const ex2 = document.getElementById('ex-2')
 const ex3 = document.getElementById('ex-3')
 const exemploP = document.getElementById('exemplo-p')
-const modalOpcoes = document.getElementById('menu-opcoes')  
+const modalOpcoes = document.getElementById('menu-opcoes') 
+const email = document.getElementById('mail')
+
   
 containerJogo.style.backgroundColor = ''; 
 grid.style.color = ''; 
@@ -411,6 +422,8 @@ ex1.src = './imagens/ex1.png'
 ex2.src = './imagens/ex2.png'
 ex3.src = './imagens/ex3.png'
 exemploP.innerHTML = '<strong>G</strong> e<strong> I</strong> não existem em qualquer lugar da palavra!'
+email.style.color = 'black'
+
     
 }
 
@@ -442,6 +455,7 @@ const darkModeBtn = document.getElementById('darkmode')
         darkModeBtn.checked = false
     }
 }
+
 
 window.onload = () => {
 criarGrid(5, 6, grid)
