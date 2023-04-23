@@ -92,3 +92,72 @@
        
 
 }
+
+@media screen and (max-width: 401px) {
+  .title-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+  header h1 {
+    margin-left: 0;
+  }
+  #ghost-div {
+    display: none;
+  }
+  #teclado {
+  grid-template-columns: repeat(21, minmax(auto, 1em));
+  }
+    
+    #teclado button {
+    font-size: inherit;
+    }
+    
+    .modal {
+      font-size: 0.5em;
+      }
+      #modal-estatistica {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        justify-content: center;
+        align-items: center; 
+        flex-direction: column;
+        border-radius: 8px;
+        border: 1px solid black;
+        background-color: white;
+        color: black;
+        box-shadow: 0 4px 23px 0 rgba(0,0,0,.2);
+        max-height: 30%;
+        max-width: 400px;
+        padding: 2em;
+        font-size: 0.7em;
+        } 
+   
+  } 
+  
+  @media screen and (min-width: 400px) {
+    .title-container {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-start;
+    }
+    header h1 {
+      margin-left: 0;
+    }
+    #ghost-div {
+      display: none;
+    }
+    #teclado {
+      grid-template-columns: repeat(21, minmax(auto, 1em));
+      margin-bottom: 10vh;
+
+      }
+      
+      #teclado button {
+      font-size: inherit;
+      }
+      .modal {
+        font-size: 0.5em;
+        }
+    } 
