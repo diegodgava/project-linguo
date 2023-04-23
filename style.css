@@ -308,7 +308,9 @@ display: flex;
 justify-content: space-between;
 font-size: 1.2em;
 }
-
+.estatistica-box {
+    display: flex;
+}
 .estatistica-container {
 display: flex;
 flex-direction: column;
