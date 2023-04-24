@@ -111,6 +111,11 @@ const submit = () => {
         winStreak()
         maiorStreak()
         dadosVitoria()
+        setTimeout(() => {
+            document.getElementById('restart-container').style.display = 'flex';
+            menuEstatistica(); 
+        }, 2200);
+        
         espacoVago = 0;
         palpites = 0
     }
@@ -290,11 +295,18 @@ const mostrarInstrucao = () => {
         }, 100);
     });
 }
+const menuEstatistica = () => {
+const modalEstatistica = document.querySelector('#modal-estatistica')
+const modalCont = document.querySelector('#modal-container')
+modalEstatistica.style.display = 'flex';
+modalCont.style.display = 'flex';
+}
 
 const mostrarEstatistica = () => {
 const iconEstatistica = document.querySelector('.modal-icon-estatis')
 const modalEstatistica = document.querySelector('#modal-estatistica')
 const modalCont = document.querySelector('#modal-container')
+
 
 
         
@@ -467,6 +479,15 @@ const darkModeBtn = document.getElementById('darkmode')
     }
 }
 
+const reiniciarJogo = () =>  {
+const botaoRestart = document.getElementById('restart-btn')
+const modalInstrucao = document.querySelector('.modal');
+const modalCont = document.querySelector('#modal-container')
+
+botaoRestart.addEventListener('click', () => {
+location.reload();
+})
+}
 
 window.onload = () => {
 criarGrid(5, 6, grid)
@@ -479,5 +500,6 @@ mostrarOpcoes()
 estatisticaAtual() 
 modoEscuro()
 recuperarModo()
+reiniciarJogo()
 }
 
