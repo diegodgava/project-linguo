@@ -113,7 +113,7 @@ const submit = () => {
         dadosVitoria()
         setTimeout(() => {
             document.getElementById('restart-container').style.display = 'flex';
-            menuEstatistica(); 
+            menuEstatistica()
         }, 2200);
         
         espacoVago = 0;
@@ -124,6 +124,10 @@ const submit = () => {
         animarDerrota()
         partidasJogadas()
         quebrarStreak()
+        setTimeout(() => {
+            document.getElementById('restart-container').style.display = 'flex';
+            menuEstatistica()
+        }, 2200);
     } 
 }
 
@@ -300,6 +304,7 @@ const modalEstatistica = document.querySelector('#modal-estatistica')
 const modalCont = document.querySelector('#modal-container')
 modalEstatistica.style.display = 'flex';
 modalCont.style.display = 'flex';
+estatisticaAtual()
 }
 
 const mostrarEstatistica = () => {
@@ -378,17 +383,21 @@ let maiorStreak = localStorage.getItem('streakCheck') || 0
 }
 
 const estatisticaAtual = () => {
-    const total = document.getElementById('n-jogados')
-    const streak = document.getElementById('win-streak')
-    const maiorStreak = document.getElementById('maior-win-streak')
+    const total = document.getElementById('n-jogados');
+    const streak = document.getElementById('win-streak');
+    const maiorStreak = document.getElementById('maior-win-streak');
+    const vitorias = document.getElementById('qtd-vitorias');
 
-    let maiorStreakStorage = localStorage.getItem('maiorStreak')
-    let totalStorage = localStorage.getItem('totalDePartidas')
-    const streakAtual = localStorage.getItem('winStreak')
-
+    let totalVitorias = JSON.parse(localStorage.getItem('vitorias'));
+    let maiorStreakStorage = JSON.parse(localStorage.getItem('maiorStreak'));
+    let totalStorage = JSON.parse(localStorage.getItem('totalDePartidas'));
+    const streakAtual = JSON.parse(localStorage.getItem('winStreak'));
+    
     total.innerHTML = !totalStorage ? 0 : totalStorage;
-    streak.innerHTML = !streakAtual ? 0 : streakAtual
-    maiorStreak.innerHTML = !maiorStreakStorage ? 0 : maiorStreakStorage
+    streak.innerHTML = !streakAtual ? 0 : streakAtual;
+    maiorStreak.innerHTML = !maiorStreakStorage ? 0 : maiorStreakStorage;
+    vitorias.innerHTML = !totalVitorias ? 0 : totalVitorias;
+
 } 
 
 const escuro = () => {

@@ -170,7 +170,6 @@ const palavrasPossiveis =
     "belem",
     "belga",
     "bença",
-    "bento",
     "berço",
     "berro",
     "besta",
