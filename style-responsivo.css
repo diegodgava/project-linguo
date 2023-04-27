@@ -10,6 +10,10 @@
   #ghost-div {
     display: none;
   }
+  #restart-container {
+    top: 75%;
+    left: 50%;
+}
   } 
   @media screen and (max-width: 800px) and (min-height: 700px) {
     .title-container {
