@@ -1445,6 +1445,7 @@ const palavrasPossiveis =
 
 const listaDePalavras =
 [
+    
     "poste",
     "Aaiún",
     "Aarão",

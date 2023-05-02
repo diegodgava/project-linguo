@@ -1,5 +1,6 @@
 
-let palavraSorteada = palavrasPossiveis[Math.floor(Math.random() * palavrasPossiveis.length)].toUpperCase()
+let palavraSorteada = "Linguo"
+palavrasPossiveis[Math.floor(Math.random() * palavrasPossiveis.length)].toUpperCase()
 const dicionario = listaDePalavras.map(palavra => palavra.toUpperCase());
 let palpites = [[]]
 let contadorPalpite = 0
