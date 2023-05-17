@@ -1,23 +1,18 @@
-Linguo - Word Game
+# Linguo - Jogo de Palavras
 
-https://diegodgava.github.io/project-linguo/
+**[Link para jogar Linguo](link_para_jogar_linguo)**
 
-Welcome to Linguo, an addictive and challenging word game! Linguo is a CS50 final project inspired by the New York Times' game, Wordle. It has been developed to provide users with a fun and interactive word-guessing experience.
+Bem-vindo ao Linguo, um jogo de palavras viciante e desafiador! Linguo é um projeto inspirado no jogo Wordle do New York Times. Foi desenvolvido para proporcionar aos usuários uma experiência divertida e interativa de adivinhação de palavras.
 
-Description
-Linguo is a word game where the objective is to guess a hidden word within a limited number of attempts. Each hidden word is randomly generated from an internal dictionary within the game. The player must use their deduction skills to uncover the word by guessing different combinations of letters. The game provides feedback on the correctness of each guess, guiding the player towards the correct word.
+## Descrição
+Linguo é um jogo de palavras onde o objetivo é adivinhar uma palavra oculta em um número limitado de tentativas. Cada palavra oculta é gerada aleatoriamente a partir de um dicionário interno do jogo. O jogador deve usar suas habilidades de dedução para descobrir a palavra, tentando diferentes combinações de letras. O jogo fornece feedback sobre a correção de cada tentativa, orientando o jogador para a palavra correta.
 
-Features
-Unlimited Gameplay: Unlike the original Wordle game, Linguo allows players to enjoy the game as many times as they want. There are no daily word restrictions, enabling players to challenge themselves with different words endlessly.
+## Recursos
+- **Jogabilidade Ilimitada**: Ao contrário do jogo original Wordle, Linguo permite que os jogadores desfrutem do jogo quantas vezes quiserem. Não há restrições diárias de palavras, permitindo que os jogadores se desafiem com palavras diferentes infinitamente.
+- **Sistema de Pontuação**: Linguo acompanha o desempenho do jogador, mantendo uma pontuação. A pontuação aumenta a cada acerto e é reiniciada quando o jogador vence ou perde o jogo. Desafie a si mesmo e busque pontuações mais altas a cada jogada!
+- **Geração de Palavras**: O jogo gera palavras aleatoriamente a partir de um dicionário interno, garantindo uma experiência de jogo diversificada e envolvente. Cada palavra é cuidadosamente selecionada para fornecer um nível apropriado de desafio ao jogador.
+- **Interface Responsiva**: A interface do jogo foi projetada para ser amigável e responsiva, garantindo uma jogabilidade suave em diferentes dispositivos e tamanhos de tela. O layout intuitivo permite que os jogadores se concentrem no jogo e desfrutem de uma experiência perfeita.
 
-Scoring System: Linguo keeps track of the player's performance by maintaining a score. The score increases with each successful guess, and it resets when the player wins or loses the game. Compete against yourself and aim for higher scores with every play!
+Esperamos que você se divirta jogando Linguo tanto quanto nós nos divertimos criando-o. Divirta-se e boa sorte com as adivinhações de palavras!
 
-Word Generation: The game generates words randomly from a built-in dictionary, ensuring a diverse and engaging gameplay experience. Each word is carefully selected to provide an appropriate level of challenge to the player.
-
-Responsive Interface: The game interface is designed to be user-friendly and responsive, ensuring smooth gameplay across different devices and screen sizes. The intuitive layout allows players to focus on the game and enjoy a seamless experience.
-
-
-We hope you enjoy playing Linguo as much as we enjoyed creating it. Have fun and happy word-guessing!
-
-Credits
-New York Times - Inspiration for the Wordle game.
+Créditos: New York Times - Inspiração para o jogo Wordle.
