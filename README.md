@@ -13,6 +13,6 @@ Linguo é um jogo de palavras onde o objetivo é adivinhar uma palavra oculta em
 - **Geração de Palavras**: O jogo gera palavras aleatoriamente a partir de um dicionário interno, garantindo uma experiência de jogo diversificada e envolvente. Cada palavra é cuidadosamente selecionada para fornecer um nível apropriado de desafio ao jogador.
 - **Interface Responsiva**: A interface do jogo foi projetada para ser amigável e responsiva, garantindo uma jogabilidade suave em diferentes dispositivos e tamanhos de tela. O layout intuitivo permite que os jogadores se concentrem no jogo e desfrutem de uma experiência perfeita.
 
-Esperamos que você se divirta jogando Linguo tanto quanto nós nos divertimos criando-o. Divirta-se e boa sorte com as adivinhações de palavras!
+Esperamos que você se divirta jogando Linguo tanto quanto eu me diverti criando-o. Divirta-se e boa sorte com as adivinhações de palavras!
 
 Créditos: New York Times - Inspiração para o jogo Wordle.
